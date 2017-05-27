@@ -2,4 +2,4 @@
 
 Full URL: [https://olegilyenko.github.io/presentation-graphql-type-system-scaladays](https://olegilyenko.github.io/presentation-graphql-type-system-scaladays)
 
-Short URL: [http://bit.ly/graphql-typesystem-berlin](http://bit.ly/graphql-typesystem-berlin)
+Short URL: [http://bit.ly/scaladays-graphql](http://bit.ly/scaladays-graphql)
