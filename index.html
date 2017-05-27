@@ -25,8 +25,8 @@
 
     <!--<script src="assets/offline/fonts.js"></script>-->
 
-    <!--<script src="https://use.typekit.net/jgs4yos.js"></script>-->
-    <!--<script>try{Typekit.load({ async: true });}catch(e){}</script>-->
+    <script src="https://use.typekit.net/jgs4yos.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -48,14 +48,6 @@
 
 	<body>
     <div id="credit" style="display: none"></div>
-
-    <!--<a href="https://graphql-europe.org">-->
-      <!--<img id="graphql-europe" style="display: none" src="assets/img/graphql-europe.svg">-->
-    <!--</a>-->
-
-    <!--<a href="https://graphql-europe.org#diversity">-->
-      <!--<img id="diversity" style="display: none" src="assets/img/diversity.svg">-->
-    <!--</a>-->
 
 		<div class="reveal">
 
@@ -79,7 +71,7 @@
         </section>
 
         <section>
-          <h2>Wouldn't it be great if...</h2>
+          <h2>Wouldn't it be <strong>great</strong> if...</h2>
           <pre><code class="graphiql javascript" data-trim contenteditable>
           </code></pre>
         </section>
@@ -158,8 +150,7 @@
             <li class="fragment fade-in" data-fragment-index="1">Used internally since 2012</li>
             <li class="fragment fade-in" data-fragment-index="2">Open source version is published in July 2015</li>
             <li class="fragment fade-in" data-fragment-index="3">15+ programming languages</li>
-            <li class="fragment fade-in" data-fragment-index="4">Completely backend agnostic</li>
-            <li class="fragment fade-in" data-fragment-index="5">Specification: <a href="https://facebook.github.io/graphql" target="_blank">https://facebook.github.io/graphql</a></li>
+            <li class="fragment fade-in" data-fragment-index="4">Specification: <a href="https://facebook.github.io/graphql" target="_blank">https://facebook.github.io/graphql</a></li>
           </ul>
         </section>
 
@@ -274,7 +265,7 @@ query MyProduct {
 
           <ul>
             <li>
-              Database API
+              <strong>Database API</strong>
 
               <ul>
                 <li class="fragment fade-in" data-fragment-index="1">Not SQL</li>
@@ -282,14 +273,14 @@ query MyProduct {
               </ul>
             </li>
             <li class="fragment fade-in" data-fragment-index="3">
-              Serialization format
+              <strong>Serialization format</strong>
 
               <ul>
                 <li  class="fragment fade-in" data-fragment-index="4">works with JSON and similar formats</li>
               </ul>
             </li>
             <li class="fragment fade-in" data-fragment-index="5">
-              Transport protocol
+              <strong>Transport protocol</strong>
 
               <ul class="fragment fade-in" data-fragment-index="6">
                 <li>Most often used with HTTP</li>
@@ -499,9 +490,9 @@ val result: Future[Json] =
           </code></pre>
         </section>
 
+        <!--
         <section>
           <h2>Demo Time</h2>
-          <!-- GrpahiQL, Fragments, Introspection, docs -->
 
           <pre><code class="graphiql javascript" data-trim contenteditable>
 {
@@ -522,41 +513,42 @@ val result: Future[Json] =
 }
           </code></pre>
         </section>
+        -->
 
         <section>
           <h2>Features</h2>
 
           <ul>
             <li>
-              Marshalling
+              <strong>Marshalling</strong>
 
               <ul>
                 <li>spray-json, circe, MessagePack, Amazon Ion, ...</li>
               </ul>
             </li>
             <li class="fragment fade-in" data-fragment-index="1">
-              Stream-based subscriptions
+              <strong>Stream-based subscriptions</strong>
 
               <ul>
                 <li>akka-streams, monix, RxScala, ...</li>
               </ul>
             </li>
             <li class="fragment fade-in" data-fragment-index="2">
-              Deferred values/Fetch API
+              <strong>Deferred values/Fetch API</strong>
 
               <ul>
                 <li>Helps to solve N+1 query problem</li>
               </ul>
             </li>
             <li class="fragment fade-in" data-fragment-index="3">
-              Middleware
+              <strong>Middleware</strong>
 
               <ul>
                 <li>Query execution instrumentation</li>
               </ul>
             </li>
             <li class="fragment fade-in" data-fragment-index="4">
-              Query reducers
+              <strong>Query reducers</strong>
 
               <ul>
                 <li>Query analysis before execution</li>
@@ -564,6 +556,37 @@ val result: Future[Json] =
               </ul>
             </li>
           </ul>
+        </section>
+
+        <section>
+          <h2>Sangria Users</h2>
+
+          <div class="logos">
+            <div class="impl-logo impl-logo-small fragment fade-in"  style="width: 50%">
+              <a href="https://twitter.com/" target="_blank"><img src="assets/img/users/twitter.svg"></a>
+            </div>
+            <div class="impl-logo impl-logo-small fragment fade-in" style="width: 50%">
+              <a href="https://www.nytimes.com/" target="_blank"><img src="assets/img/users/nyt.svg"></a>
+            </div>
+            <div class="impl-logo impl-logo-wide fragment fade-in" style="width: 50%">
+              <a href="https://www.coursera.org/" target="_blank"><img src="assets/img/users/coursera.svg"></a>
+            </div>
+            <div class="impl-logo impl-logo-wide fragment fade-in" style="width: 50%">
+              <a href="https://www.redbubble.com/" target="_blank"><img src="assets/img/users/redbubble.svg"></a>
+            </div>
+            <div class="impl-logo fragment fade-in" style="width: 100%">
+              <a href="https://www.graph.cool/" target="_blank"><img src="assets/img/users/graphcool.svg"></a>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <a href="https://developer.github.com/v4/" target="_blank">
+            <img src="assets/img/github-api-v4.png">
+          </a>
+          <a href="https://developer.github.com/v4/" class="fragment fade-in" data-fragment-index="1" target="_blank">
+            https://developer.github.com/v4
+          </a>
         </section>
 
         <section>

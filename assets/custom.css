@@ -1,5 +1,5 @@
 .title-font {
-  font-family: 'Roboto' !important;
+  font-family: "proxima-nova", 'Roboto' !important;
   font-weight: 300;
 
 }
@@ -48,7 +48,7 @@ code, .zoom-code {
 }
 
 .reveal h1 {
-  font-family: 'Roboto' !important;
+  font-family: "proxima-nova", 'Roboto' !important;
   font-weight: 300;
   text-transform: none !important;
   font-size: 2.6em;
@@ -57,7 +57,7 @@ code, .zoom-code {
 
 .reveal h2 {
   color: #dc7676;
-  font-family: 'Roboto' !important;
+  font-family: "proxima-nova", 'Roboto' !important;
   font-weight: 300;
   text-transform: none !important;
   font-size: 2.2em !important;
@@ -69,7 +69,7 @@ h2.smaller {
 }
 
 .reveal h3 {
-  font-family: 'Roboto' !important;
+  font-family: "proxima-nova", 'Roboto' !important;
   font-weight: 300;
   text-transform: none !important;
   font-size: 1.2em !important;
@@ -150,8 +150,17 @@ iframe.graphiql {
 .logos img {
   /*float: left;*/
   height: 100px;
-  padding-right: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
   padding-bottom: 20px;
+}
+
+.impl-logo-wide img {
+  width: 70%;
+}
+
+.impl-logo-small img {
+  height: 150px;
 }
 
 .reveal strong {
@@ -169,4 +178,8 @@ iframe.graphiql {
 #graphql-europe, #diversity {
   width: 100%;
   height: 100%;
+}
+
+.reveal strong {
+  font-weight: 700;
 }
