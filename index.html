@@ -71,6 +71,12 @@
         </section>
 
         <section>
+          <h2>A glimpse into the <strong>Future</strong></h2>
+
+          <img src="assets/img/future.jpg" style="width: 80%">
+        </section>
+
+        <section>
           <h2>Wouldn't it be <strong>great</strong> if...</h2>
           <pre><code class="graphiql javascript" data-trim contenteditable>
           </code></pre>
@@ -154,25 +160,10 @@
           </ul>
         </section>
 
-        <section>
+        <section data-transition="fade-out slide-in">
           <h2>Response Structure</h2>
 
-          <pre style="float: left; width: 50%"><code data-trim contenteditable class="javascript">
-query MyProduct {
-  product(id: 123) {
-    name
-    description
-
-    picture {
-      width
-      height
-      url
-    }
-  }
-}
-          </code></pre>
-
-          <pre style="float: left; width: 50%" class="fragment fade-in" data-fragment-index="1"><code data-trim contenteditable class="javascript">
+          <pre><code data-trim contenteditable class="javascript">
 {
   "data": {
     "product": {
@@ -190,8 +181,29 @@ query MyProduct {
           </code></pre>
         </section>
 
+        <section data-transition="fade-in slide-out">
+          <h2>Response Structure</h2>
+
+          <pre><code data-trim contenteditable class="javascript">
+{
+
+     product   {
+       name
+       description
+
+       picture   {
+         width
+         height
+         url
+      }
+    }
+
+}
+          </code></pre>
+        </section>
+
         <section>
-          <h2>Every Field Is a Function</h2>
+          <h2>Every Field Is a <strong>Function</strong></h2>
 
           <pre style="float: left; width: 50%"><code data-trim contenteditable class="javascript">
 query MyProduct {
@@ -291,7 +303,7 @@ query MyProduct {
         </section>
 
         <section>
-          <h2>Backend Agnostic</h2>
+          <h2><strong>&forall;</strong>-agnostic</h2>
 
           <img src="assets/img/app-layers.svg">
         </section>
@@ -434,31 +446,39 @@ val ProductType =
         <section>
           <h2>Query Type</h2>
 
+          <!--
           <pre><code data-trim contenteditable class="javascript">
 type Query {
   product(id: Int!): Product
   products: [Product]
 }
           </code></pre>
+          -->
 
           <pre style="padding-top: 20px" class="fragment fade-in" data-fragment-index="1"><code data-trim contenteditable class="scala">
 class ProductRepo {
-  val Products = List(
-    Product("1", "Cheesecake", "Tasty"),
-    Product("2", "Health Potion", "+50 HP"))
+  def products: List[Product] =
+    Product("1", "Cheesecake", "Tasty") ::
+    Product("2", "Health Potion", "+50 HP") :: Nil
 
-  @GraphQLField
-  def product(id: String) =
-    Products find (_.id == id)
+  def product(id: String): Option[Product] =
+    products find (_.id == id)
 }
-
-case class Ctx(repo: ProductRepo)
           </code></pre>
 
           <pre style="padding-top: 20px" class="fragment fade-in" data-fragment-index="2"><code data-trim contenteditable class="scala">
-val QueryType =
-  deriveContextObjectType[Ctx, ProductRepo, Unit](
-    _.repo, ObjectTypeName("Query"))
+val IdArg = Argument("id", StringType)
+
+val QueryType = ObjectType("Query", "Query entry point",
+  fields[ProductRepo, Unit](
+    Field("product", OptionType(ProductType),
+      description = Some("Get product by ID"),
+      arguments = IdArg :: Nil,
+      resolve = c ⇒ c.ctx.product(c arg IdArg)),
+
+    Field("products", ListType(ProductType),
+      description = Some("List all product"),
+      resolve = c ⇒ c.ctx.products)))
           </code></pre>
 
         </section>
@@ -470,7 +490,7 @@ val QueryType =
 val query =
   graphql"""
     query MyProduct {
-      product(id: 2) {
+      product(id: "2") {
         name
         description
 
@@ -486,7 +506,7 @@ val query =
 val schema = Schema(QueryType)
 
 val result: Future[Json] =
-  Executor.execute(schema, query, Ctx(new ProductRepo))
+  Executor.execute(schema, query, new ProductRepo)
           </code></pre>
         </section>
 
