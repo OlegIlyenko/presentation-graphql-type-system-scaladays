@@ -1,4 +1,4 @@
-## "GraphQL - a type system for your API" presentation at Berlin UG meetup
+## "GraphQL - a type system for your API" presentation at ScalaDays
 
 Full URL: [https://olegilyenko.github.io/presentation-graphql-type-system-scaladays](https://olegilyenko.github.io/presentation-graphql-type-system-scaladays)
 
