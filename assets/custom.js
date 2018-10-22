@@ -1,7 +1,7 @@
 $(function() {
   //var graphiqlUrl = "http://localhost:9000/graphiql"
   // var graphiqlUrl = "http://try.sangria-graphql.org/graphiql"
-  var graphiqlUrl = "https://sangria-playground-1.herokuapp.com/graphiql" // because of the https
+  var graphiqlUrl = "https://sangria-playground-1.herokuapp.com/platground" // because of the https
   var graphiqlZoom = 140
 
   var showHideCredits = function (currentSlide) {
